@@ -1,0 +1,47 @@
+﻿<Page x:Class="exel_app_new.pages_app.ofline_mode.ofline_main_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:exel_app_new.pages_app.ofline_mode"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ofline_main_page">
+
+    <Grid>
+        <Grid>
+            <Button Content="Онлайн режим" Name="btn_ofline" Click="btn_ofline_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="Выгрузить в EXEL" Name="btn_exel" Click="btn_exel_Click" Margin="10"/>
+                        <Button Content="Добавить значения" Name="btn_add" Click="btn_add_Click" Margin="10"/>
+                        <Button Content="Создать xml" Name="btn_edit_xml" Click="btn_edit_xml_Click" Margin="10"/>
+                    </StackPanel>
+                    <DataGrid Name="grbData" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="id" Binding="{Binding id}"/>
+                            <DataGridTextColumn Header="Значение f1" Binding="{Binding f1}" />
+                            <DataGridTextColumn Header="Значение f2" Binding="{Binding f2}" />
+                            <DataGridTextColumn Header="Значение f3" Binding="{Binding f3}" Width="130"/>
+                            <DataGridTemplateColumn Header="Обновить">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Name="btn_upd" Click="btn_upd_Click" Content="Обновить"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Удалить">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Удалить" Name="btn_del" Click="btn_del_Click"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
